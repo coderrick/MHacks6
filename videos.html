@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang = "en-US">
 <head>
-	<title>Beep It!</title>
+	<title>Videos</title>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -41,17 +42,29 @@
 			</div>
 		</div>
 	</nav>
-	<div id = "explanation">
-		<h1 class = "msg">Inappropriate? Censor it.</h1>
-		<h1 class = "msg">Appropriate? Still censor it.</h1>
-		<img id = "censored" src = "Resources/censor.jpg"></img>
+	<ul id = "switch" class="nav nav-pills nav-justified">
+		<li class = "active"><a data-toggle="pill" href="#vids">Funny</a></li>
+		<li ><a data-toggle="pill" href="#serious_vids">Censored</a></li>
+	</ul>
+	<div class = "tab-content">
+		<div id = "vids"  class="tab-pane fade in active">
+			<ul id = "vid_array">
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/EvgeCG2e-6c" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/-GW6Mn7OZJs" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/jUAqnJuY3Z0" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/zAaWNyqRw9o" allowfullscreen></iframe></li>
+			</ul>
+		</div>
+		<div id = "serious_vids" class="tab-pane fade">
+			<ul id = "vid_array">
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/liZm1im2erU" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/cZaJYDPY-YQ" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/stoLqWXsIOY" allowfullscreen></iframe></li>
+				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/10yrPDf92hY" allowfullscreen></iframe></li>
+			</ul>	
+		</div>
 	</div>
-	<div id = "summary">
-		<h1 style = "font-family: sans-serif;">This is a tool that allows you to edit videos and add necessary and unncessary censorship to them.</h1>
-		<h1 style = "text-align:center; font-family: sans-serif;">For jokes and for seriouseness.</h1>
-		<button type="button" id = "start" class="btn btn-primary btn-lg">Censor a Video!</button>
-	</div>
-		<div id="sign_up" class="modal fade" role="dialog">
+	<div id="sign_up" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->

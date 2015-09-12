@@ -13,6 +13,7 @@ body{
 a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: white; /*BACKGROUND color for active*/
 	background-color: red;
+		-webkit-transition: color .25s, background-color .25s;
 }
 
 .navbar-default {
@@ -75,6 +76,14 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	margin-right: auto;
 	height:40%;
 }
+
+.active{
+
+}
+.active:hover{
+	background-color: white;
+	color:red;
+}
 #about_us
 {
 	height:200px;
@@ -87,4 +96,22 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 {
 	text-align: center;
 	margin-top: 15%;
+}
+
+#switch{
+	border-bottom: solid black;
+}
+
+.vid{
+	float:left;	
+	margin-left: 5%;
+
+}
+#vid_array li{
+    list-style-type: none;
+
+}
+
+iframe{
+	border: none;
 }
