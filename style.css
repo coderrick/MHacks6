@@ -60,7 +60,7 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color:white;
 	text-align: center;
 	height: 300px;
-	background:linear-gradient(0deg, purple, red 80%) no-repeat;
+	background:linear-gradient(0deg, orange, red 80%) no-repeat;
 }
 #censored
 {
