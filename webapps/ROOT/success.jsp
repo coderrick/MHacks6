@@ -1,11 +1,6 @@
 <%
     if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
 %>
-You are not logged in<br/>
-<a href="index.jsp">Please Login</a>
-<%} else {
-%>
-Welcome <%=session.getAttribute("userid")%>
 <head>
 	<title>Videos</title>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
@@ -14,7 +9,11 @@ Welcome <%=session.getAttribute("userid")%>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-
+You are not logged in<br/>
+<a href="index.jsp">Please Login</a>
+<%} else {
+%>
+Welcome <%=session.getAttribute("userid")%>
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
