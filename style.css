@@ -80,10 +80,6 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 .active{
 
 }
-.active:hover{
-	background-color: white;
-	color:red;
-}
 #about_us
 {
 	height:200px;
@@ -103,15 +99,19 @@ a:hover, .navbar-default .navbar-nav > .active > a:focus {
 }
 
 .vid{
-	float:left;	
-	margin-left: 5%;
+	margin-top: 10px;
+
+
 
 }
 #vid_array li{
     list-style-type: none;
 
 }
-
+.video{
+	margin-top: 10px;
+	margin-left:3%;
+}
 iframe{
 	border: none;
 }
