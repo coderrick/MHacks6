@@ -41,7 +41,7 @@
 
 
 				</ul>
-				<ul class="nav navbar-nav" style = "margin-left: 8%;">
+				<ul class="nav navbar-nav" style = "margin-left: 10%;">
 					<a href="reg.jsp"><li class="btn btn-info btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li></a>
 					<a href="login.jsp"><li class="btn btn-info btn-lg" data-toggle="modal" data-target="#log_in">Login</li></a>
 
@@ -52,7 +52,7 @@
 	<div id = "explanation">
 		<h1 class = "msg">Inappropriate? Censor it.</h1>
 		<h1 class = "msg">Appropriate? Still censor it.</h1>
-		<button type="button" id = "start" class="btn btn-primary btn-lg">Censor a Video!</button>
+		<center><button type="button" id = "start" class="btn btn-primary">Censor a Video!</button></center>
 	</div>
 	<div id = "summary">
 		<h1 style = "font-family: sans-serif;">This is a tool that allows you to edit videos and add necessary and unncessary censorship to them.</h1>
