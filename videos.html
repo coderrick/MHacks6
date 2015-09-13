@@ -2,18 +2,31 @@
 <html lang = "en-US">
 <head>
 	<title>Videos</title>
+	<link rel="http://gdata.youtube.com/schemas/2007#video.captionTracks"
+     type="application/atom+xml"
+     href="https://gdata.youtube.com/feeds/api/videos/ZTUVgYoeN_b/captions"
+     yt:hasEntries="true|false"/>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="xml2json.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  	<script src="build/tracking-min.js"></script>
+  	<script src="build/data/face-min.js"></script>
+  	<script src="build/data/eye-min.js"></script>
+  	<script src="build/data/mouth-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="soundeff.js"></script>
+
 </head>
 
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header" style = "margin-left:12%;">
-				<a class="navbar-brand" style="color:white" href="#">Beep it!</a>
+				<a class="navbar-brand" style="color:white" href="#">Spleek</a>
 			</div>
 			<div>
 
@@ -27,16 +40,16 @@
 						</div>
 					</form>
 				</div>
-				<ul class="nav navbar-nav" style = "margin-left:13%;">
+				<ul class="nav navbar-nav" style = "margin-left:11%;">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li class="active"><a href="about.html">About</a></li>
 					<li class="active"><a href="videos.html">Videos</a></li>
 
 
 				</ul>
-				<ul class="nav navbar-nav" style = "margin-left: 8%;">
-					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
-					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#log_in">Login</li>
+				<ul class="nav navbar-nav" style = "margin-left: 12%;">
+					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
+					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log_in"style = "margin-left: 5px;">Login</li>
 
 				</ul>
 			</div>
@@ -48,25 +61,32 @@
 	</ul>
 	<div class = "tab-content">
 		<div id = "vids"  class="tab-pane fade in active">
-			<ul id = "vid_array">
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/EvgeCG2e-6c" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/-GW6Mn7OZJs" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/jUAqnJuY3Z0" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/zAaWNyqRw9o" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/7y1xJAVZxXg" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/Z42vDV2q6II" allowfullscreen></iframe></li>
-			</ul>
+			<div class = "video" id = "one"></div>
+		<div class="btn-group btn-group-justified" style = "margin-top:10px;">
+		<!--
+			<a href="#" class="btn btn-primary" onclick = "changeVideo(0);" >One</a>
+			<a href="#" class="btn btn-primary"onclick = "changeVideo(1);">Two</a>
+			<a onclick = "changeVideo(2);" href="#" class="btn btn-primary">Three</a>
+			<a onclick = "changeVideo(3);" href="#" class="btn btn-primary">Four</a>
+			<a onclick = "changeVideo(4);" href="#" class="btn btn-primary">Five</a>
+			<a onclick = "changeVideo(5);" href="#" class="btn btn-primary">Six</a> !-->
 		</div>
+		</div>
+
 		<div id = "serious_vids" class="tab-pane fade">
-			<ul id = "vid_array">
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/liZm1im2erU" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/cZaJYDPY-YQ" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/stoLqWXsIOY" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/10yrPDf92hY" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/10yrPDf92hY" allowfullscreen></iframe></li>
-				<li class = "vid"><iframe class="youtube-player" width = "90%" height = "300px" src="https://www.youtube.com/embed/10yrPDf92hY" allowfullscreen></iframe></li>
-			</ul>	
+			<div class = "video" id = "real_one"></div>
+
+		<div class="btn-group btn-group-justified" style = "margin-top:10px;">
+		<!--
+			<a onclick = "changeVideo2(0);" href="#" class="btn btn-primary">One</a>
+			<a onclick = "changeVideo2(1);" href="#" class="btn btn-primary">Two</a>
+			<a onclick = "changeVideo2(2);" href="#" class="btn btn-primary">Three</a>
+			<a onclick = "changeVideo2(3);" href="#" class="btn btn-primary">Four</a>
+			<a onclick = "changeVideo2(4);" href="#" class="btn btn-primary">Five</a>
+			<a onclick = "changeVideo2(5);" href="#" class="btn btn-primary">Six</a> !-->
+		</div>			
 		</div>
+
 	</div>
 	<div id="sign_up" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -78,14 +98,14 @@
 					<h4 class="modal-title">Sign Up</h4>
 				</div>
 				<div class="modal-body">
-				<div class="form-group">
-				  <label for="usr">Username:</label>
-				  <input type="text" class="form-control" id="usr">
-				</div>
-				<div class="form-group">
-				  <label for="pwd">Password:</label>
-				  <input type="password" class="form-control" id="pwd">
-				</div>
+					<div class="form-group">
+						<label for="usr">Username:</label>
+						<input type="text" class="form-control" id="usr">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd">
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button id = "register" type ="button" class = "btn btn-default" data-dismiss="modal">Sign Up!</button>
@@ -105,18 +125,18 @@
 					<h4 class="modal-title">Log In</h4>
 				</div>
 				<div class="modal-body">
-				<div class="form-group">
-				  <label for="usr">Username:</label>
-				  <input type="text" class="form-control" id="usr">
-				</div>
-				<div class="form-group">
-				  <label for="pwd">Password:</label>
-				  <input type="password" class="form-control" id="pwd">
-				</div>
+					<div class="form-group">
+						<label for="usr">Username:</label>
+						<input type="text" class="form-control" id="usr">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd">
+					</div>
 
 				</div>
 				<div class="modal-footer">
-				    <button id = "Login" type ="button" class = "btn btn-default" data-dismiss="modal">Sign In</button>
+					<button id = "Login" type ="button" class = "btn btn-default" data-dismiss="modal">Sign In</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
