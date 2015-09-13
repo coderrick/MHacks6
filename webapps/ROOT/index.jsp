@@ -37,15 +37,13 @@
 					</form>
 				</div>
 				<ul class="nav navbar-nav" style = "margin-left:13%;">
-					<li class="active"><a href="index.html">Home</a></li>
 					<li class="active"><a href="about.html">About</a></li>
-					<li class="active"><a href="videos.html">Videos</a></li>
 
 
 				</ul>
 				<ul class="nav navbar-nav" style = "margin-left: 8%;">
-					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
-					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#log_in">Login</li>
+					<a href="reg.jsp"><li class="btn btn-info btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li></a>
+					<a href="login.jsp"><li class="btn btn-info btn-lg" data-toggle="modal" data-target="#log_in">Login</li></a>
 
 				</ul>
 			</div>
@@ -54,12 +52,11 @@
 	<div id = "explanation">
 		<h1 class = "msg">Inappropriate? Censor it.</h1>
 		<h1 class = "msg">Appropriate? Still censor it.</h1>
-		<img id = "censored" src = "Resources/censor.jpg"></img>
+		<button type="button" id = "start" class="btn btn-primary btn-lg">Censor a Video!</button>
 	</div>
 	<div id = "summary">
 		<h1 style = "font-family: sans-serif;">This is a tool that allows you to edit videos and add necessary and unncessary censorship to them.</h1>
 		<h1 style = "text-align:center; font-family: sans-serif;">For jokes and for seriouseness.</h1>
-		<button type="button" id = "start" class="btn btn-primary btn-lg">Censor a Video!</button>
 	</div>
 	<div id="sign_up" class="modal fade" role="dialog">
 		<div class="modal-dialog">
