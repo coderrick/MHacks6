@@ -34,7 +34,7 @@
 			
 				<ul class="nav navbar-nav" style = "float:right;">
 					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
-					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log_in"style = "margin-left: 5px;">Login</li>
+					<a href="index.jsp"><li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log_in"style = "margin-left: 5px;">Login</li></a>
 
 				</ul>
 			</div>
@@ -129,8 +129,6 @@
 	</div>
 </body>
 </html>
-You are not logged in<br/>
-<a href="index.jsp">Please Login</a>
 <%} else {
 %>
 Welcome <%=session.getAttribute("userid")%>
