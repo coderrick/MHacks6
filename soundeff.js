@@ -8,20 +8,25 @@
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var links = ["EvgeCG2e-6c", '-GW6Mn7OZJs', "jUAqnJuY3Z0", "zAaWNyqRw9o", "7y1xJAVZxXg", "Z42vDV2q6II"];
+      var times = [];
       var second_links = ["liZm1im2erU", "cZaJYDPY-YQ", "stoLqWXsIOY", "10yrPDf92hY"];
+      var poss_profanity = ["sh", "ph", "f", "ni" , "pu", "di", "bi", "ba"];
       var player;
       var player_2;
+
+
 
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('one', {
           height: '500',
           width: '92%',
-          videoId: 'zAaWNyqRw9o',
+          videoId: 'PY9DcIMGxMs',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
           }
         });
+
         player2 = new YT.Player('real_one', {
           height: '500',
           width: '92%',
@@ -31,14 +36,14 @@
             'onStateChange': onPlayerStateChange
           }
         });        
-         var x = $.ajax({
+        //  var x = $.ajax({
 
-            type: 'GET',
-            url: 'https://www.googleapis.com/youtube/v3/captions?videoId=zAaWNyqRw9o&part=snippet',
-            dataType: 'xml',
-            success: parseXml
-        });
-         log.c(x);
+        //     type: 'GET',
+        //     url: 'https://www.youtube.com/watch?v=yJXTXN4xrI8',
+        //     dataType: 'xml',
+        //     success: parseXml
+        // });
+        //  console.log(x);
       }
 
       function changeVideo(vid)
@@ -86,8 +91,24 @@
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
+
+          for(var i=0; i<times.length; i++ )
+          {
+            console.log(times);
+            var time = times[i];
+            var playSound = function() {
+              var audio = new Audio('Resources/censor-beep2.mp3');
+              player.mute();
+              audio.play();
+              player.unMute();
+            }
+            setTimeout(playSound, time);
+          }
+          // for every time that theat shit occurs
+            // then play a beep at the time that it is specified
+
+
+          
         }
       }
       function stopVideo() {
@@ -183,20 +204,37 @@ $.youtubePlay = function(yid, frame){
 //////////////////////////////////////////////////////////////////////////
 var x = $.ajax({
     type: 'GET',
-    url: 'http://video.google.com/timedtext?lang=en&v=zAaWNyqRw9o',
+    url: 'http://video.google.com/timedtext?lang=en&v=PY9DcIMGxMs',
     dataType: 'xml',
     success: parseXml
 });
 function parseXml(xml)
 {
+    var jsonString = xml2json(xml);
+    jsonString = jsonString.replace("undefined", "");
+    var json = JSON.parse(jsonString);
+    for(x= 0; x< json.transcript.text.length; x++ )
+    {
+      for(i=0; i< poss_profanity.length; i++)
+      {
+        if(json.transcript.text[x]["#text"][0].toLowerCase() == poss_profanity[i])
+        {
+          var start = parseFloat(json.transcript.text[x]["@start"]);
+          times.push(start*1000);
+
+
+        }        
+      }
+
+    }
     var node = $(xml).find('text').eq(1).text()//.attr("dur");
     var node1 = $(xml).find('text').eq(1).attr('start')
     console.log(node)
     console.log(node1)
+    // debugger
   //find every Tutorial and print the author
-  $(xml).find("transcript").each(function()
-  {
-      
+  $(xml).find("transcript").each(function(i, text) {
+  
     //$("#output").append($(this).attr("start") + "<br />");
   });
 console.log(xml);
