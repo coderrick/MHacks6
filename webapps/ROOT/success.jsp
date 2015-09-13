@@ -31,20 +31,8 @@
 			</div>
 			<div>
 
-				<div class="col-sm-3 col-md-3 pull-left" style= "margin-left:auto; margin-right:auto;" >
-					<form class="navbar-form" role="search">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<ul class="nav navbar-nav" style = "margin-left:11%;">
-
-				</ul>
-				<ul class="nav navbar-nav" style = "margin-left: 12%;">
+			
+				<ul class="nav navbar-nav" style = "float:right;">
 					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
 					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log_in"style = "margin-left: 5px;">Login</li>
 
