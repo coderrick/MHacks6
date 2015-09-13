@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MusicMash!</title>
+        <title>Spleek</title>
         
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
@@ -15,33 +15,101 @@
         <script src="main.js"></script>
     </head>
     <body>
-             <form method="post" action="login.jsp">
-            <center>
-            <table border="1" width="30%" cellpadding="3">
-                <thead>
-                    <tr>
-                        <th colspan="2">Login Here</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>User Name</td>
-                        <td><input type="text" name="uname" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="pass" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Login" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Yet Not Registered!! <a href="reg.jsp">Register Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </form>
+            <nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header" style = "margin-left:12%;">
+				<a class="navbar-brand" style="color:white" href="#"></a>
+			</div>
+			<div>
+
+				<div class="col-sm-3 col-md-3 pull-left" style= "margin-left:auto; margin-right:auto;" >
+					<form class="navbar-form" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+							<div class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<ul class="nav navbar-nav" style = "margin-left:13%;">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li class="active"><a href="about.html">About</a></li>
+					<li class="active"><a href="videos.html">Videos</a></li>
+
+
+				</ul>
+				<ul class="nav navbar-nav" style = "margin-left: 8%;">
+					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
+					<li class="btn btn-info btn-lg" data-toggle="modal" data-target="#log_in">Login</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id = "explanation">
+		<h1 class = "msg">Inappropriate? Censor it.</h1>
+		<h1 class = "msg">Appropriate? Still censor it.</h1>
+		<img id = "censored" src = "Resources/censor.jpg"></img>
+	</div>
+	<div id = "summary">
+		<h1 style = "font-family: sans-serif;">This is a tool that allows you to edit videos and add necessary and unncessary censorship to them.</h1>
+		<h1 style = "text-align:center; font-family: sans-serif;">For jokes and for seriouseness.</h1>
+		<button type="button" id = "start" class="btn btn-primary btn-lg">Censor a Video!</button>
+	</div>
+	<div id="sign_up" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Sign Up</h4>
+				</div>
+				<div class="modal-body">
+				<div class="form-group">
+				  <label for="usr">Username:</label>
+				  <input type="text" class="form-control" id="usr">
+				</div>
+				<div class="form-group">
+				  <label for="pwd">Password:</label>
+				  <input type="password" class="form-control" id="pwd">
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button id = "register" type ="button" class = "btn btn-default" data-dismiss="modal">Sign Up!</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="log_in" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Log In</h4>
+				</div>
+				<div class="modal-body">
+				<div class="form-group">
+				  <label for="usr">Username:</label>
+				  <input type="text" class="form-control" id="usr">
+				</div>
+				<div class="form-group">
+				  <label for="pwd">Password:</label>
+				  <input type="password" class="form-control" id="pwd">
+				</div>
+
+				</div>
+				<div class="modal-footer">
+				    <button id = "Login" type ="button" class = "btn btn-default" data-dismiss="modal">Sign In</button>
+				  	<button type="button" class="btn btn-default" data-dismiss="modal">Close f</button>
+				</div>
+			</div>
+		</div>
+	</div>
     </body>		
 </html>
