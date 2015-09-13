@@ -32,7 +32,7 @@
 			<div>
 
 			
-				<ul class="nav navbar-nav" style = "float:right;">
+				<ul class="nav navbar-nav" style = "float:right;display:flex;">
 					<li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign_up">Sign Up</li>
 					<a href="index.jsp"><li class="btn btn-primary btn-lg" data-toggle="modal" data-target="#log_in"style = "margin-left: 5px;">Login</li></a>
 
